@@ -1,0 +1,57 @@
+Le but de l'exercice est de réaliser une interface administrateur.
+
+Aucun autre fichier que ceux déjà inclus ne doit être dans le dossier.
+
+Afin de ne pas être perdu, respectez l'ordre indiqué dans le fichier etapes.txt
+    L'exercice se réalise en 10 étapes plus ou moins grosses.
+
+L'exercice sera noté avec une appréciation.
+
+L'ensemble des fichiers (de pages web) doit respecter la structure du fichier template.php
+
+Le visuel n'est pas noté, ne perdez pas du temps dessus.
+
+
+Base de données :
+    Le nom de la base de données, des tables et des colonnes doit :
+        Être tout en minuscule
+        Sans accents, apostrophe, ou tout autre caractère que des lettres
+            Sauf les underscores _ qui remplacent les espaces
+
+
+Les requêtes à la base de données doivent toutes se faire en trois étapes :
+
+    Étape 1 : je déclare la requête à venir comme une chaine de caractères
+        exemple : 
+            $requete = "SELECT * FROM clients WHERE id = $idClient";
+
+    Étape 2 : je prépare ma requête avec l'objet PDO (la variable $pdo est déclarée dans le fichier init.php)
+            $req = $pdo->prepare($requete);
+
+    Étape 3 : j'exécute ma requête
+            $req->execute();
+
+
+L'ensemble de votre application doit être TypeSafe, c'est-à-dire qu'on doit toujours connaître et prendre en
+compte la nature d'une variable :
+    - Pas un seul 'double égal' ==, que des 'triple égal' ===
+    - Dans vos fonctions, l'ensemble des paramètres doit être précédé de 
+      son type :
+        function addition(int $x, int $y) {
+
+        }
+
+
+Les noms des variables et des fonctions doivent :
+    Commencer par une lettre minuscule et être écrits en camelCase
+    Être sans accents
+    Être sans chiffres : au lieu de créer plusieurs variables pour un même 'sujet', créez un array
+
+
+Pour les messages de validation, ou d'erreur :
+    Créez deux arrays vides :
+        Un array $messagesValidation
+        Un array $messagesErreur
+    Pour chaque message à afficher à l'utilisateur, vous insérerez une chaine de caractères dans l'array 
+    correspondant.
+    Vous pourrez ensuite, en-dessous de votre Header, afficher chaque message à transmettre à l'utilisateur.

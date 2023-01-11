@@ -1,0 +1,102 @@
+Étape 1 : fonctions message()
+    
+    Créez une fonction messageValidation() qui prend en paramètre un array, et :
+        Affiche une div,
+        À l'intérieur de cette div, affiche un <p></p> par valeur de l'array, avec  
+        la valeur contenue à l'intérieur du paragraphe,
+        Affiche le texte en vert.
+
+    Créez une fonction messageErreur(), qui est la même que ci-dessus, sauf qu'elle affiche le texte
+    en rouge.
+
+
+Étape 2 : Page creer.php
+
+    Créez un formulaire permettant d'insérer un nouveau produit dans la base de données
+
+    Pour l'image, utilisez une image témoin dont vous stockerez le chemin comme VARCHAR dans la
+    base de données (en tant que valeur par défaut).
+
+    Affichez le/les message retour à l'utilisateur.
+
+
+Étape 3 : Page index.php
+
+    Récupérer et affichez l'ensemble des produits contenus dans la base de données (sans aucun style, en 
+    effectuant des var_dump() là où ils seraient normalement affichés).
+
+
+Étape 4 : card.php
+
+    Créer une fonction card() qui prend en paramètre les informations d'un produit et affiche une 
+    affichette avec sa photo et ses informations (titre, prix, description, date de création).
+
+    Dans la page index.php, remplacer les var_dump() par des appels à la fonction card().
+
+
+Étape 5 : card.php et index.php
+
+    Dans la fonction card.php :
+        Ajouter un bouton 'supprimer' au produit
+        Englober ce bouton dans un lien <a></a> vers index.php, contenant une requete GET delete=<id_produit>
+
+    Dans la page index.php :
+        Si un utilisateur a envoyé une requête pour supprimer un produit :
+            Supprimer ce produit de la base de données.
+            Afficher un message retour à l'utilisateur.
+
+
+Étape 6 : card.php et modifier.php
+
+    Dans la fonction card.php :
+        Ajouter un bouton 'modifier' au produit
+        Englober ce bouton dans un lien <a></a> vers modifier.php et contenant une requete GET 
+        modifier=<id_produit>
+
+    Dans la page modifier.php :
+        Créer un formulaire permettant de modifier les informations d'un produit (sauf la photo).
+
+        Quand le formulaire est envoyé, les inputs vides sont ignorés, et ceux remplis engendrent 
+        une modification du produit.
+        
+        Afficher un message retour à l'utilisateur contenant l'ensemble des propriétés modifiées.
+            exemple :
+                Le titre a été modifié.
+                Le prix a été modifié.
+
+
+Étape 7 : inscription.php
+
+    Créez un formulaire d'inscription insérant un nouvel utilisateur dans la base de données.
+    On doit vérifier :
+        Si l'email n'existe pas déjà dans la base de données
+        Si le mot de passe fait entre 8 et 12 caractères.
+
+    Affichez un message retour à l'utilisateur.
+
+
+Étape 8 : connexion.php
+
+    Créez un formulaire de connexion.
+
+    Quand un utilisateur est connecté, gardez ceci en mémoire.
+
+    Si la connexion a échoué, affichez un message retour à l'utilisateur.
+
+
+Étape 9 : Authentification, auth.php
+
+    Dans le fichier auth.php, créer du code qui interdit l'accès à une page si l'utilisateur n'est pas
+    connecté et le redirige vers la page de connexion.
+
+    Requérissez ce code pour les pages index.php, creer.php et modifier.php
+
+
+Étape 10 : Déconnexion
+
+    En haut de la page index.php, créez un bouton de déconnexion (un lien contenant une requête GET
+    deconnexion=1).
+
+    Après être déconnecté, l'utilisateur est renvoyé vers la page connexion.php, et on lui affiche un message
+    lui confirmant la déconnexion.
+    

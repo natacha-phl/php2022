@@ -1,0 +1,62 @@
+Ne pas commencer tant que les 10 étapes de l'exercice ne sont pas entièrement terminées.
+Les exercices bonus peuvent être faits dans le désordre.
+
+1 - Page index.php
+
+    Demander une vérification utilisateur avant de supprimer un produit.
+
+2 - Page index.php
+
+    Créer une barre de recherche.
+    Si une requête est envoyées depuis celle-ci, ne sélectionner que les produits dont le titre contient
+    la recherche envoyée.
+    Si aucun produit ne correspond, afficher un message à l'utilisateur.
+
+3 - Page index.php
+    Créer une option de tri (en utilisant une balise <select></select>) par :
+        Prix croissant
+        Prix décroissant
+        Date + récente
+        Date + éloignée
+    L'option de tri choisie doit rester affichée dans le <select></select> au chargement de la page.
+
+4 - Page connexion.php
+
+    Bloquer l'accès à un compte si un utilisateur essaye de se connecter 5 fois en utilisant un mauvais
+    mot de passe.
+
+    Après un échec, afficher à l'utilisateur le nombre d'essais qu'il lui reste, si il lui en reste 
+    moins de 3.
+
+5 - Page inscription.php
+    Lors de l'inscription, vérifier si l'adresse email contient un '@' sans utiliser str_contains() 
+    mais en utilisant str_spit().
+
+
+BONUS SUPPLEMENTAIRE
+
+1 - inscription
+
+    L'adresse mail :
+        - doit contenir : maximum un @
+        et 
+        soit :
+            - gmail.com
+            - hotmail.fr 
+            - outlook.com
+        en chaine de femeture après l'@
+
+2 - créer un petit bot (fonction)
+
+    Prend un nombre en paramètres
+    Va supprimer un produit à la fois pour le nombre qu'elle prend en paramètre
+
+    Pour chaque nombre, la fonction va supprimer un produit, recharger la page,
+    et répéter cette action tant qu'on a pas atteint le nombre passé en paramètre ou
+    qu'il n'y a plus de produits dans la base de données.
+
+    À la fin de son action, le bot ne recharge pas la page.
+
+    Il recharge la page tant qu'il a une action à affectuer.
+
+    (tu devras utiliser $_SESSION et la fonction header())
